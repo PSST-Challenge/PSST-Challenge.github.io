@@ -50,3 +50,7 @@ participating students.
     </div>
 {%- endfor -%}
 </div>
+
+### Special Thanks
+
+Raye Watts designed our logo and web site.
