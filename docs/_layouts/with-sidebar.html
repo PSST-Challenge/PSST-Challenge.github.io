@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{%- include head.html -%}
+
+<body>
+    {%- include header.html -%}
+
+    <nav class="sidebar">
+      <a href="/">Home</a>
+      {%- for p in site.pages -%}
+        {%- if p.title and p.url != "/" -%}
+            {%- if p.url == page.url -%}
+                <span class="selected">{{p.title}}</span>
+            {%- else -%}
+                <a href="{{p.url | relative_url}}">{{p.title}}</a>
+            {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+
+    <div id="content" class="has-sidebar">
+      {{ content }}
+    </div>
+
+    {%- include footer.html -%}
+
+</body>
+
+</html>

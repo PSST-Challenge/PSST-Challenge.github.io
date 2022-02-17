@@ -1,0 +1,39 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div id="footer-affiliates">
+    <div>
+      <img src="/assets/images/affiliates/nih.svg" alt="Logo for the National Institute of Health (NIH) National Institute on Deafness and Other Communication Disorders. The letters NIH appear on a white arrow-like box which points to the right." />
+    </div>
+    <div>
+      <img src="/assets/images/affiliates/ohsu.svg" alt="Logo for Oregon Health and Science University (OHSU). The letters OHSU appear beneat a curved line, from which curved lines rise in the shape of a flame in yellow, blue, and green." />
+    </div>
+    <div>
+      <img src="/assets/images/affiliates/psu.svg" alt="Logo for Portland State University (PSU). The words 'Portland State' in a large serif font with 'UNIVERISTY' in a sans-serif font below. A green, four-loop, knot-like emblem appears to the left of the text, with the top loop resembling the letter P, the left and right resembling an S, and the bottom resembling a U." />
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+      {%- if site.author %}
+        <ul class="contact-list">
+          {% if site.author.name -%}
+            <li class="p-name">{{ site.author.name | escape }}</li>
+          {% endif -%}
+          {% if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif %}
+        </ul>
+      {%- endif %}
+      </div>
+    </div>
+
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+
+  </div>
+
+</footer>

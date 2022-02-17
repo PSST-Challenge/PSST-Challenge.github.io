@@ -1,0 +1,306 @@
+html {
+    height: 100%;
+    /*font-size: 8px;*/
+    font-size: 16px;
+}
+body {
+    background-color: #ffffff;
+    /*text-align: center;*/
+    font-family: 'Pontano Sans', Helvetica, Arial, sans-serif;
+    color: #000533;
+    height:100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    /*grid-template-rows: [header] 22.5rem [end-header] 3rem [content] auto [end-content] 3rem [footer] 18rem [end-footer] 0fr [end];*/
+    grid-template-rows: [header] auto [end-header] 3rem [content] auto [end-content] 3rem [footer] auto [end];
+    grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
+    min-height: 100%;
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 780px) {
+    header {
+        font-size: 0.33rem;
+    }
+
+    body {
+        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
+    }
+}
+@media screen and (min-width: 780px) {
+    header {
+        font-size: 0.33rem;
+    }
+
+    body {
+        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
+    }
+
+    /*footer #footer-affiliates {*/
+    /*    grid-template-columns: 30em 6.75em 30em;*/
+    /*}*/
+}
+
+@media screen and (min-width: 1024px) {
+    header { font-size: 0.5rem; }
+
+    body {
+        grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
+    }
+}
+
+header {
+    height: 22.5em;
+    grid-row: header / end-header;
+    grid-column: begin / end;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    background-color: #b9d0f2;
+    background-image: url("/assets/images/psst-banner-background.jpg");
+}
+
+header #banner {
+    grid-column: content / end-content;
+    display: grid;
+    grid-template-columns: [content] auto [end-logo] 1fr [end-content];
+    grid-template-rows: inherit;
+}
+
+header #logo-box {
+    width: 14em;
+    grid-row: 1 / span 1;
+    grid-column: content / end-logo;
+    background-size: cover;
+    background-color: #000533;
+    color: white;
+    text-align: center;
+}
+
+header #title-box {
+    grid-row: header / end-header;
+    grid-column: end-logo / end-content;
+}
+
+#logo {
+    width: 86%;
+    padding: 1em;
+}
+
+#content h1 {
+    font-weight: normal;
+    margin-top: 0;
+}
+
+header a:link, header a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    border: inherit;
+}
+
+header #title-box h1 {
+    margin: 0 0 0 4.22em;
+    height: 100%;
+    grid-template-rows: 4.22fr [the] 3fr [title] 5fr [sub-title] 10.28fr [end];
+    /*grid-template-rows: .19fr [the] .14fr [title] .23fr [sub-title] auto [end];*/
+    display: grid;
+    font-size: inherit;
+}
+header #title-box h1 a {
+    display: block;
+    line-height: 0.7em;
+}
+
+header #title-box #title-box-the {
+    grid-row: the / span 1;
+    font-size: 2.46em;
+    padding: 0;
+}
+
+header #title-box #title-box-title{
+    grid-row: title / span 1;
+    font-size: 4.75em;
+    font-family: "Helvetica Black", "Arial Black", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.04em;
+}
+
+header #title-box #title-box-sub-title {
+    font-size: 2.04em;
+    grid-row: sub-title / span 1;
+}
+
+nav.sidebar {
+    grid-column: content / column-a;
+    grid-row: content / end-content;
+    margin: 0 0 auto 0;
+    padding: 1.5rem;
+    background-color: #e5e5e5;
+}
+
+nav.sidebar a {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: #000533;
+    text-decoration: none;
+}
+
+nav.sidebar a:hover {
+    text-decoration: underline;
+}
+
+nav.sidebar .selected {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+}
+
+nav.sidebar a:last-child, nav.sidebar span:last-child {
+    margin-bottom: 0;
+}
+
+#content {
+    text-align: left;
+}
+#content.full-width {
+    grid-column: content / end-content;
+    grid-row: content / end-content;
+}
+
+#content.has-sidebar {
+    grid-column: column-a / end-content;
+    grid-row: content / end-content;
+    margin-left: 3rem;
+}
+
+
+footer {
+    font-size: 0.5rem;
+}
+
+footer {
+    height: 18em;
+    grid-row: footer / end;
+    grid-column: begin / end;
+    background-color: #C8D9F3;
+    color: white;
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+footer #footer-affiliates {
+    grid-column: content / end-content;
+    padding: 0 3rem 0 3rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 23% 6% 23%;
+    grid-template-rows: 6em [logos] 6em [end-logos] 6em;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer #footer-affiliates div {
+    grid-column-end: span 1;
+    grid-row: logos / end-logos;
+}
+footer #footer-affiliates img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+.body-full-width {
+    grid-row: content / end-content;
+    grid-column: content / end-content;
+}
+
+
+#home {
+    margin: 0 1.5rem 0 1.5rem;
+}
+
+nav#home-nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    /*grid-template-columns: [about] 17rem 1fr [contributors] 17rem 1fr [materials] 17rem [end];*/
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+nav#home-nav .home-nav-poster {
+    width: 17rem;
+    grid-column: span 2 / span 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: [image] 17rem 1.5rem [button] auto [end];
+    grid-template-columns: 1fr [button] auto 1fr [end];
+}
+nav#home-nav .home-nav-poster .image-link {
+    grid-column: 1 / span 3;
+    grid-row: span 1;
+    max-width: 100%;
+    background-color: #ccc;
+}
+
+nav#home-nav .home-nav-poster .image-link img {
+    width: 100%;
+    max-height: 100%;
+}
+
+a.button {
+    text-transform: uppercase;
+    color: white;
+    background-color: #757575;
+    text-decoration: none;
+}
+
+nav#home-nav .home-nav-poster .button {
+    /*grid-column: button / span 1;*/
+    grid-row: button;
+    grid-column: button;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.25rem;
+}
+
+nav#home-nav #home-nav-about {
+    grid-column-start: about;
+}
+
+nav#home-nav #home-nav-contributors {
+    grid-column-start: contributors;
+}
+
+nav#home-nav #home-nav-materials {
+    grid-column-start: materials;
+}
+
+p:last-of-type {
+    margin-bottom: 3rem;
+}
+
+#the-psst-people {
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    /*justify-content: space-between;*/
+}
+
+#the-psst-people .person {
+    width: 10.625em;
+    /*margin: 0 3rem;*/
+}
+
+#the-psst-people .person .portrait {
+    max-width: 100%;
+}
+
+#the-psst-people .person .portrait img {
+    max-width: 100%;
+}
