@@ -2,7 +2,7 @@
   <div id="banner">
     <div id="logo-box">
       <a href="/">
-        <img id="logo" src="/assets/images/psst-logo-red.png" alt="PSST Logo"/>
+        <img id="logo" src="/assets/images/psst-logo-red.png" alt="The PSST logo. Pale blue circles and lines form what could represent the nodes and edges of a deep neural network. A bold orange pair of hands are cupped in front as though whispering to the viewer. Sans-serif, italic letters 'PSST' are below in bold orange."/>
       </a>
     </div>
     <div id="title-box">
@@ -20,7 +20,12 @@
 </header>
 
 <nav id="sidebar">
-  <a href="/">Home</a>
+  {%- if page.url == "/" -%}
+    <span class="selected">Home</span>
+  {%- else -%}
+    <a href="/">Home</a>
+  {%- endif -%}
+
   {%- for p in site.pages -%}
     {%- unless p.disable -%}
       {%- if p.title and p.url != "/" -%}

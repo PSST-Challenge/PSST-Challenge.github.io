@@ -2,8 +2,8 @@
 layout: page
 title: The Organizers
 permalink: /organizers/
-poster_img: /assets/images/blank-square.jpg
-poster_alt: TODO! A description of the poster image
+poster_img: /assets/images/home/icon-psst.svg
+poster_alt: "The PSST logo, but in all white. Circles and lines form what could represent the nodes and edges of a deep neural network. A pair of hands are cupped in front as though whispering to the viewer. Behind the icon is a stylized spectrogram in a wide spectrum of blues and purples." 
 challenge_organizers: [
     {
         portrait: /assets/images/people/steven.jpg,

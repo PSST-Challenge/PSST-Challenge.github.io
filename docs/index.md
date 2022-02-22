@@ -13,7 +13,7 @@ The PSST Challenge focuses on a technically-challenging and clinically important
             {%- if page.poster_img and page.poster_alt -%}
               <div id="home-nav-{{page.title | slugify}}" class="home-nav-poster">
                 <a href="{{ page.url | relative_url }}" class="image-link">
-                  <img src="{{page.poster_img}}" alt="{{page.poster_alt}}" />
+                  <img src="{{page.poster_img}}" alt="{{page.poster_alt}}" title="{{page.poster_title}}"/>
                 </a>
                 <a class="button" href="{{ page.url | relative_url }}">{{page.title}}</a>
               </div>
@@ -22,4 +22,13 @@ The PSST Challenge focuses on a technically-challenging and clinically important
     {%- endfor -%}
 </nav>
 {%- endif -%}
+
 </div>
+
+<div style="margin-top: 6rem; font-style: italic; font-size: 11px; color: #666">
+<strong>Icon Credits:</strong>
+<a href="https://thenounproject.com/icon/announcement-1704541/">Announcement</a> by Mello from Noun Project.
+<a href="https://thenounproject.com/icon/line-graph-4002182/">Line Graph</a> by Tom Fricker from Noun Project.
+<a href="https://thenounproject.com/icon/flight-1968650/">Flight</a> by Paisley from Noun Project.
+</div>
+

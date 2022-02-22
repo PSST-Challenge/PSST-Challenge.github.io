@@ -2,8 +2,8 @@
 layout: page
 title: Clinical Background
 permalink: /clinical-background/
-poster_img: /assets/images/blank-square.jpg
-poster_alt: TODO! A description of the poster image
+poster_img: /assets/images/home/icon-line-graph.svg
+poster_alt: "On the left and right are five white circles, and slightly curved lines connect each circle to a circle in a different position on the other side. Behind the icon is a stylized spectrogram in a wide spectrum of blues and purples." 
 ---
 ## Clinical Background
 

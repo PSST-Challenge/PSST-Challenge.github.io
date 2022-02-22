@@ -2,8 +2,8 @@
 layout: page
 title: Student Travel
 permalink: /student-travel/
-poster_img: /assets/images/blank-square.jpg
-poster_alt: TODO! A description of the poster image
+poster_img: /assets/images/home/icon-flight.svg
+poster_alt: "A icon of an airplane over the ground, depicted in sparse, thick, white lines. Behind the icon is a stylized spectrogram in a wide spectrum of blues and purples." 
 ---
 
 ## NIDCD-Funded PSST Student Fellowship
