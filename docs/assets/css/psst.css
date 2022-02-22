@@ -28,20 +28,23 @@ header {
     grid-column: begin / end;
     display: grid;
     grid-template-columns: inherit;
-    grid-template-rows: inherit;
+    grid-template-rows: [header] auto [end-header];
     background-color: #b9d0f2;
     background-image: url("/assets/images/psst-banner-background.jpg");
 }
 
 header #banner {
+    height: inherit;
     grid-column: content / end-content;
     display: grid;
     grid-template-columns: [content] auto [end-logo] 1fr [end-content];
-    grid-template-rows: inherit;
+    grid-template-rows: [header] auto [end-header];
 }
 
 header #logo-box {
+    display: flex;
     width: 14em;
+    height: inherit;
     grid-row: 1 / span 1;
     grid-column: content / end-logo;
     background-size: cover;
@@ -51,13 +54,15 @@ header #logo-box {
 }
 
 header #title-box {
+    height: inherit;
     grid-row: header / end-header;
     grid-column: end-logo / end-content;
 }
 
-#logo {
-    width: 86%;
-    padding: 1em;
+header #logo-box img#logo {
+    margin: auto;
+    max-width: 86%;
+    max-height: 90%;
 }
 
 #content :first-child {
@@ -75,9 +80,9 @@ header a#hamburger, header a#hamburger {
 }
 
 header #title-box h1 {
-    margin: 0 0 0 4.22em;
-    height: 100%;
-    grid-template-rows: 4.22fr [the] 3fr [title] 5fr [sub-title] 10.28fr [end];
+    margin: 0 0 0 2.11rem;
+    height: inherit;
+    grid-template-rows: 4.22fr [the] 3em [title] 5em [sub-title] 2.5em [end-text] 10.28fr [end];
     /*grid-template-rows: .19fr [the] .14fr [title] .23fr [sub-title] auto [end];*/
     display: grid;
     font-size: inherit;
@@ -357,7 +362,9 @@ body.with-sidebar nav#sidebar {
 }
 
 @media screen and (min-width: 1024px) {
-    header { font-size: 0.5rem; }
+    header {
+        font-size: 0.5rem;
+    }
 
     body {
         grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
