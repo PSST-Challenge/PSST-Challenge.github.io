@@ -292,7 +292,7 @@ body.with-sidebar nav#sidebar {
     }
 
     body {
-        grid-template-rows: [header] auto [end-header] auto [content] auto [end-content] 3rem [footer] auto [end];
+        grid-template-rows: [header] auto [end-header] auto [end-menu] 1.5rem [content] 1fr [end-content] 3rem [footer] auto [end];
         grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
     }
 
@@ -321,7 +321,7 @@ body.with-sidebar nav#sidebar {
 
     nav#sidebar, body.with-sidebar nav#sidebar {
         display: none;
-        grid-row: end-header / content;
+        grid-row: end-header / end-menu;
         grid-column: begin / end;
     }
 
