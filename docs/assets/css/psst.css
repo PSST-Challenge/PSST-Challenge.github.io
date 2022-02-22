@@ -60,8 +60,7 @@ header #title-box {
     padding: 1em;
 }
 
-#content h1 {
-    font-weight: normal;
+#content :first-child {
     margin-top: 0;
 }
 
