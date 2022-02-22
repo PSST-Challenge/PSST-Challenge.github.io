@@ -10,9 +10,9 @@ poster_alt: "A icon of an airplane over the ground, depicted in sparse, thick, w
 
 The National Institute on Deafness and Other Communication Disorders (NIDCD) has funded a supplement grant to fund the PSST Challenge, the purpose of which is to promote the use of clinical datasets of aphasic speech by the mainstream machine learning community (R01-DC015999-04S1).
 
-The grant provides funds for approximately 7 students to participate in the PSST Challenge, and by extension, the LERC 2022. Student fellows will be reimbursed up to $1500 for travel and conference expenses. Any student who is active in an academic program, or post-doc actively involved in a research lab that has earned authorship on a paper to be submitted to the PSST Challenge can apply for a Student Fellowship. Applicants must be enrolled in a degree-granting academic program or a post-doctoral fellowship as of the abstract and fellowship application deadline. Earned authorship denotes a significant and real involvement in the genesis, study conduct, and interpretation. Each abstract submission may be associated with only one fellowship application, and each fellowship application may be associated with only one abstract submission. 
+The grant provides funds for approximately 7 students to participate in the PSST Challenge, and by extension, the LERC 2022. Student fellows will be reimbursed up to $1500 for travel and conference expenses. Any student who is active in an academic program, or post-doc actively involved in a research lab that has earned authorship on a paper to be submitted to the PSST Challenge can apply for a Student Fellowship. Applicants must be enrolled in a degree-granting academic program or a post-doctoral fellowship as of the abstract and fellowship application deadline. Earned authorship denotes a significant and real involvement in the genesis, conduct, and study interpretation. Each abstract submission may be associated with only one fellowship application, and each fellowship application may be associated with only one abstract submission. 
 
-The PSST Challenge Organizing Committee determines the awardees. Committee members will recuse themselves from evaluating submissions when there is a conflict of interest. A **partial list of criteria for awarding these fellowships includes**: preference to first authors, and on papers that are most highly rated by the PSST Challenge Organizing Committee. Preference is also given to members of underrepresented ethnic and racial minorities, and applicants with a documented need for travel funding.
+The PSST Challenge Organizing Committee determines the awardees. Committee members will recuse themselves from evaluating submissions when there is a conflict of interest. A **partial list of criteria for awarding these fellowships includes**: preference to first authors, and on papers that are most highly rated by the PSST Challenge Organizing Committee. Preference is also given to members of underrepresented minorities, and applicants with a documented need for travel funding.
 
 
 ### Application Instructions
@@ -21,7 +21,7 @@ There are two parts to the application. Part 1 is a form on which to provide bas
 
 Download the application: [PSST Challenge - Application for Student Travel Support](/assets/pdf/psst-challenge_application-for-student-travel-support.pdf)
 
-Gerasimos Fergadiotis, Ph.D., Steven Bedrick, Ph.D., Robert Gale, MS., & Mikala Fleegle, MA. 
+Gerasimos Fergadiotis, Ph.D., Steven Bedrick, Ph.D., Robert Gale, MS., & Mikala Fleegle, MS. 
 
 
 
