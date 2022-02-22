@@ -1,4 +1,5 @@
 ---
+disable: true
 layout: page
 title: Join the Challenge
 permalink: /join/

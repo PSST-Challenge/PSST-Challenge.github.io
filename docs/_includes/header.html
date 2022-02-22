@@ -6,6 +6,10 @@
       </a>
     </div>
     <div id="title-box">
+      <a id="hamburger" href="javascript:void(0);" class="icon">
+        <i class="fa fa-bars"></i>
+      </a>
+
       <h1>
         <a href="/" id="title-box-the">The</a>
         <a href="/" id="title-box-title">PSST Challenge</a>
@@ -14,3 +18,36 @@
     </div>
   </div>
 </header>
+
+<nav id="sidebar">
+  <a href="/">Home</a>
+  {%- for p in site.pages -%}
+    {%- unless p.disable -%}
+      {%- if p.title and p.url != "/" -%}
+    {{p.disable}}
+          {%- if p.url == page.url -%}
+              <span class="selected">{{p.title}}</span>
+          {%- else -%}
+              <a href="{{p.url | relative_url}}">{{p.title}}</a>
+          {%- endif -%}
+      {%- endif -%}
+    {%- endunless; -%}
+  {%- endfor -%}
+</nav>
+
+<script>
+    (function (){
+        let navElement = document.getElementById("sidebar");
+        const hamburger = document.getElementById("hamburger");
+        function openMenu() {
+            console.log(navElement.style.display)
+            if (navElement.style.display === "block") {
+                navElement.style.display = "none";
+            }
+            else {
+                navElement.style.display = "block";
+            }
+        }
+        hamburger.addEventListener("click", openMenu);
+    })();
+</script>

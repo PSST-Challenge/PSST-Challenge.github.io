@@ -14,45 +14,13 @@ body {
 
 body {
     display: grid;
-    /*grid-template-rows: [header] 22.5rem [end-header] 3rem [content] auto [end-content] 3rem [footer] 18rem [end-footer] 0fr [end];*/
-    grid-template-rows: [header] auto [end-header] 3rem [content] auto [end-content] 3rem [footer] auto [end];
+    grid-template-rows: [header] auto [end-header] 3rem [content] 1fr [end-content] 3rem [footer] auto [end];
     grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
+    align-items: start;
     min-height: 100%;
     width: 100%;
 }
 
-
-
-@media screen and (max-width: 780px) {
-    header {
-        font-size: 0.33rem;
-    }
-
-    body {
-        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
-    }
-}
-@media screen and (min-width: 780px) {
-    header {
-        font-size: 0.33rem;
-    }
-
-    body {
-        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
-    }
-
-    /*footer #footer-affiliates {*/
-    /*    grid-template-columns: 30em 6.75em 30em;*/
-    /*}*/
-}
-
-@media screen and (min-width: 1024px) {
-    header { font-size: 0.5rem; }
-
-    body {
-        grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
-    }
-}
 
 header {
     height: 22.5em;
@@ -103,6 +71,10 @@ header a:link, header a:visited {
     border: inherit;
 }
 
+header a#hamburger, header a#hamburger {
+    display: none;
+}
+
 header #title-box h1 {
     margin: 0 0 0 4.22em;
     height: 100%;
@@ -134,7 +106,9 @@ header #title-box #title-box-sub-title {
     grid-row: sub-title / span 1;
 }
 
-nav.sidebar {
+
+
+nav#sidebar {
     grid-column: content / column-a;
     grid-row: content / end-content;
     margin: 0 0 auto 0;
@@ -142,7 +116,7 @@ nav.sidebar {
     background-color: #e5e5e5;
 }
 
-nav.sidebar a {
+nav#sidebar a {
     display: block;
     margin-bottom: 1.5rem;
     color: #000533;
@@ -153,14 +127,14 @@ nav.sidebar a:hover {
     text-decoration: underline;
 }
 
-nav.sidebar .selected {
+nav#sidebar .selected {
     display: block;
     font-weight: bold;
     margin-bottom: 1.5rem;
     text-decoration: none;
 }
 
-nav.sidebar a:last-child, nav.sidebar span:last-child {
+nav#sidebar a:last-child, nav#sidebar span:last-child {
     margin-bottom: 0;
 }
 
@@ -220,6 +194,10 @@ footer #footer-affiliates img {
     grid-column: content / end-content;
 }
 
+.footnotes li p:last-of-type {
+    margin-bottom: 0;
+}
+
 
 #home {
     margin: 0 1.5rem 0 1.5rem;
@@ -228,45 +206,41 @@ footer #footer-affiliates img {
 nav#home-nav {
     display: inline-flex;
     flex-wrap: wrap;
-    /*grid-template-columns: [about] 17rem 1fr [contributors] 17rem 1fr [materials] 17rem [end];*/
-    gap: 3rem;
-    justify-content: space-between;
 }
 
 nav#home-nav .home-nav-poster {
-    width: 17rem;
-    grid-column: span 2 / span 1;
-    grid-row: 1;
-    display: grid;
-    grid-template-rows: [image] 17rem 1.5rem [button] auto [end];
-    grid-template-columns: 1fr [button] auto 1fr [end];
+    text-align: center;
+    max-width: 100%;
+    /*display: inline-flex;*/
+    /*flex-direction: row;*/
+    /*flex-wrap: nowrap;*/
+    /*display: grid;*/
+    /*grid-template-rows: [image] auto auto [button] auto [end];*/
+    /*grid-template-columns: 1fr [button] auto 1fr [end];*/
 }
 nav#home-nav .home-nav-poster .image-link {
+    display: block;
     grid-column: 1 / span 3;
     grid-row: span 1;
     max-width: 100%;
-    background-color: #ccc;
 }
 
 nav#home-nav .home-nav-poster .image-link img {
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
 }
 
 a.button {
+    display: inline-block;
+    text-align: center;
     text-transform: uppercase;
     color: white;
     background-color: #757575;
     text-decoration: none;
-}
-
-nav#home-nav .home-nav-poster .button {
-    /*grid-column: button / span 1;*/
-    grid-row: button;
-    grid-column: button;
     padding: 1rem 2rem 1rem 2rem;
     border-radius: 0.25rem;
 }
+
 
 nav#home-nav #home-nav-about {
     grid-column-start: about;
@@ -303,4 +277,102 @@ p:last-of-type {
 
 #the-psst-people .person .portrait img {
     max-width: 100%;
+}
+
+nav#sidebar {
+    display: none;
+}
+
+body.with-sidebar nav#sidebar {
+    display: block;
+}
+
+@media screen and (max-width: 780px) {
+    header {
+        font-size: 0.33rem;
+    }
+
+    body {
+        grid-template-rows: [header] auto [end-header] auto [content] auto [end-content] 3rem [footer] auto [end];
+        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
+    }
+
+    nav#home-nav {
+        gap: 1.5rem;
+    }
+
+    nav#home-nav .home-nav-poster {
+        width: 7.5rem;
+        font-size: 13px;
+    }
+
+    nav#home-nav .home-nav-poster a.button {
+        text-transform: uppercase;
+        color: inherit;
+        background-color: transparent;
+        text-decoration: underline;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    #content.has-sidebar {
+        grid-column: content / end-content;
+        margin-left: 0;
+    }
+
+    nav#sidebar, body.with-sidebar nav#sidebar {
+        display: none;
+        grid-row: end-header / content;
+        grid-column: begin / end;
+    }
+
+    header a#hamburger, header a#hamburger {
+        display: block;
+        float: right;
+        font-size: 1.4rem;
+        margin-top: .75rem;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    header {
+        font-size: 0.33rem;
+    }
+
+    body {
+        grid-template-columns: [begin] 1.5rem [content] 14fr [column-a] 50fr [end-content] 1.5rem [end];
+    }
+
+    nav#home-nav {
+        gap: 3rem;
+    }
+
+    nav#home-nav .home-nav-poster {
+        width: 13.5rem;
+    }
+
+    nav#home-nav .home-nav-poster a.button {
+        text-transform: uppercase;
+        color: inherit;
+        background-color: transparent;
+        text-decoration: underline;
+        padding: 0;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header { font-size: 0.5rem; }
+
+    body {
+        grid-template-columns: [begin] 1fr [content] 14rem [column-a] 50rem [end-content] 1fr [end];
+    }
+
+    nav#home-nav {
+        gap: 3rem;
+    }
+
+    nav#home-nav .home-nav-poster {
+        width: 13.5rem;
+    }
 }
