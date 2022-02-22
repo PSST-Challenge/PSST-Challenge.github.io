@@ -54,4 +54,5 @@ participating students.
 ### Special Thanks
 
 Raye Watts designed our logo and web site.
+
 Portland State University students Mia Cywinski, Sam Hedine, Jon Madrigal, and Lidiya Khoroshenkikh contributed to the preparation and annotation of the transcribed  dataset.
