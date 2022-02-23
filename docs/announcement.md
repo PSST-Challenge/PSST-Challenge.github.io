@@ -24,14 +24,14 @@ Participants will have access to a unique dataset for phonemic ASR, consisting o
 
 The primary task will be high-accuracy automated phoneme recognition of disordered speech, with a second task focused on classifying audio samples into clinically-relevant categories. No clinical background is necessary, and we encourage participation by people with all levels of computational expertise.
 
-Participants must [register on the task website](./join/), at which point they will be given details about accessing the dataset as well as further instructions.
+Participants must [register on the task website](/join/), at which point they will be given details about accessing the dataset as well as further instructions.
 The PSST Challenge is a collaboration between Oregon Health and Science University (OHSU) and Portland State University (PSU). Our proposed activities will be supported via a grant from the National Institute on Deafness and Other Communication Disorders NIH (R01-DC015999-04S1), the purpose of which is to promote the use of clinical datasets of aphasic speech by the mainstream machine learning community. The original dataset comes via the [AphasiaBank project](https://aphasia.talkbank.org) (R01-DC008524).
 
 Please contact either Steven Bedrick (bedricks@ohsu.edu) or Gerasimos Fergadiotis (gf3@pdx.edu) with questions about any aspect of the shared task.
 
 ## Travel Assistance
 
-Thanks to the generous support of the National Institute on Deafness and Other Communication Disorders, we have a limited amount of [travel assistance](./student-travel/) available for participating students and postdocs.
+Thanks to the generous support of the National Institute on Deafness and Other Communication Disorders, we have a limited amount of [travel assistance](/student-travel/) available for participating students and postdocs.
 
 ## Submission Information
 
@@ -40,8 +40,8 @@ Papers should also feature wording in their title indicating that they are part 
 
 ## Important links:
 
-Shared Task URL: https://psst.study
-Workshop URL: https://spraakbanken.gu.se/en/rapid-2022
+* Shared Task URL: [https://psst.study](https://psst.study)
+* Workshop URL: [https://spraakbanken.gu.se/en/rapid-2022](https://spraakbanken.gu.se/en/rapid-2022)
 
 ## Important Dates
 
