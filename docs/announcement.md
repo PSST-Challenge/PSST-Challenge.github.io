@@ -20,7 +20,7 @@ Historically, automated speech recognition (ASR) technologies have struggled to 
 Recent years, have seen major advances in the state of the art in ASR, with architectures such as wav2vec 2.0 achieving notable decreases in phoneme error rate; however, these results have been on speech from individuals without neurologic impairment.
 
 The PSST Challenge will engage the ASR community in translating the latest computational techniques to the task of *high-accuracy automated phoneme recognition* in disordered speech, which has applications in many different clinical domains.
-Participants will have access to a unique dataset for phonemic ASR, consisting of a set of audio recordings of English-speaking individuals with anomia undergoing assessments, as well as a new set of high-quality annotations including phonemic transcriptions.
+Participants, after completing a data use agreement, will have access to a unique dataset for phonemic ASR, consisting of a set of audio recordings of English-speaking individuals with anomia undergoing assessments, as well as a new set of high-quality annotations including phonemic transcriptions.
 
 The primary task will be high-accuracy automated phoneme recognition of disordered speech, with a second task focused on classifying audio samples into clinically-relevant categories. No clinical background is necessary, and we encourage participation by people with all levels of computational expertise.
 
