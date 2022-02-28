@@ -9,7 +9,7 @@ poster_alt: "A icon of a person at a podium with a microphone, depicted in spars
 
 # Call for participation
 
-The "PSST: Post-Stroke Speech Transcription" shared task will be held as part of the [Fourth Workshop on Resources and Processing of Linguistic, Para-Linguistic, and Extra-Linguistic Data From People With Various Forms of Disabilities (RaPID-4)](https://spraakbanken.gu.se/en/rapid-2022), held at the [13th Language Resources and Evaluation Conference (LREC 2022)](https://lrec2022.lrec-conf.org/en/) in Marseille, France. 
+The **PSST: Post-Stroke Speech Transcription** shared task will be held as part of the Fourth Workshop on Resources and Processing of Linguistic, Para-Linguistic, and Extra-Linguistic Data From People With Various Forms of Disabilities ([RaPID-4](https://spraakbanken.gu.se/en/rapid-2022)), held at the 13th Language Resources and Evaluation Conference ([LREC 2022](https://lrec2022.lrec-conf.org/en/)) in Marseille, France. 
 
 Anomia, or word-finding difficulty, is one of the most prominent cognitive sequelae of stroke, affecting 2.5 - 4 million stroke survivors in the US alone.
 Its ensuing communication difficulties can have a major impact on the ability of a person to produce words and can affect their daily activities and health-related quality of life. 
