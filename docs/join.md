@@ -27,7 +27,7 @@ We have prepared a [set of scripts and utilities](https://github.com/PSST-Challe
 
 All users of this dataset must follow the appropriate AphasiaBank protocols for data management, and is intended for use solely as part of the PSST challenge. It must not be re-distributed, shared, or repurposed without permission.
 
-Furthermore, we ask that users of this dataset cite both us and AphasiaBank in any resulting publications, as follows:
+Furthermore, we ask that users of this dataset cite both AphasiaBank and us in any resulting publications, as follows:
 
 1. Macwhinney, B., Fromm, D., Forbes, M., & Holland, A. (2011). AphasiaBank: Methods for Studying Discourse. Aphasiology, 25(11), 1286–1307. https://doi.org/10.1080/02687038.2011.589893
 2. Gale, R., Fleegle, M., Bedrick, S., & Fergadiotis, G. (2022). [Dataset and tools for the PSST Challenge on Post-Stroke Speech Transcription](https://github.com/PSST-Challenge/psstdata) (Version 1.0.0) [Data set]. https://doi.org/10.5281/zenodo.6326002
