@@ -250,6 +250,10 @@ a.button {
     font-size: 0.8125rem;
 }
 
+p {
+    line-height: 1.7em;
+}
+
 
 nav#home-nav #home-nav-about {
     grid-column-start: about;
@@ -286,6 +290,19 @@ p:last-of-type {
 
 #the-psst-people .person .portrait img {
     max-width: 100%;
+}
+
+.highlighter-rouge {
+    font-size: 0.8125em;
+}
+
+div.highlighter-rouge {
+    margin-left: 2em;
+}
+
+div.highlighter-rouge div.highlight {
+    padding: 1em;
+    overflow: scroll;
 }
 
 nav#sidebar {
