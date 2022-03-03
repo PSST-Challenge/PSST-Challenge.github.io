@@ -21,6 +21,15 @@ Contestants may focus on either Task A or B, or they may take on the entire chal
 ### Access to the data
 We've created a unique data set for phonemic ASR, derived from the recordings in the English AphasiaBank—for the challenge. Please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScwAC3j7NQ2giyFSjrNen6NhmSbnHqdxS915ftZDBRi2SHQtQ/viewform) to gain access to the data.
 
+#### Notes on Usage
+
+All users of this dataset must follow the appropriate AphasiaBank protocols for data management, and is intended for use solely as part of the PSST challenge. It must not be re-distributed, shared, or repurposed without permission.
+
+Furthermore, we ask that users of this dataset cite both us and AphasiaBank in any resulting publications, as follows:
+
+1. Macwhinney, B., Fromm, D., Forbes, M., & Holland, A. (2011). AphasiaBank: Methods for Studying Discourse. Aphasiology, 25(11), 1286–1307. https://doi.org/10.1080/02687038.2011.589893
+2. Gale, R., Fleegle, M., Bedrick, S., & Fergadiotis, G. (2022). [Dataset and tools for the PSST Challenge on Post-Stroke Speech Transcription](https://github.com/PSST-Challenge/psstdata) (Version 1.0.0) [Data set]. https://doi.org/10.5281/zenodo.6326002
+
 
 ### A quick look at the data
 
