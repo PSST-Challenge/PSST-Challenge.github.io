@@ -21,6 +21,8 @@ Contestants may focus on either Task A or B, or they may take on the entire chal
 ### Access to the data
 We've created a unique data set for phonemic ASR, derived from the recordings in the English AphasiaBank—for the challenge. Please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScwAC3j7NQ2giyFSjrNen6NhmSbnHqdxS915ftZDBRi2SHQtQ/viewform) to gain access to the data.
 
+We have prepared a [set of scripts and utilities](https://github.com/PSST-Challenge/psstdata) for downloading and using the data, once you have received access permissions.
+
 #### Notes on Usage
 
 All users of this dataset must follow the appropriate AphasiaBank protocols for data management, and is intended for use solely as part of the PSST challenge. It must not be re-distributed, shared, or repurposed without permission.
@@ -33,7 +35,7 @@ Furthermore, we ask that users of this dataset cite both us and AphasiaBank in a
 
 ### A quick look at the data
 
-To get started with the data, have a look at this short example, where we simly print data from the first four records in the corpus:
+To get started with the data [using our toolkit](https://github.com/PSST-Challenge/psstdata), have a look at this short example, where we simply print data from the first four records in the corpus:
 
 ```python
 import psstdata
