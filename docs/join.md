@@ -65,8 +65,6 @@ This dataset includes audio recordings and phonemic transcriptions of research p
 The primary task of this challenge (Task A) is to develop an automatic phoneme recognition (APR) system that accurately identifies the phonemes produced by people with aphasia and to present those phonemes as they are, rather than smoothed over to fit whatever real word the speaker may have intended. This task has important clinical applications, including automatic scoring of picture naming test responses (Task B).   
 
 
-Point to Phonemic Conventions of normalized transcription data?
-
 ### Evaluation: Phoneme & Feature Error Rates (PER and FER)
 
 Task A will be evaluated in terms of two metrics: phoneme error rate (PER) and feature error rate (FER), with the emphasis on the latter. PER is defined as the number of phoneme errors (edits, insertions, and substitutions) divided by the number of phonemes in the reference transcript. It is the standard metric for phoneme recognition, and without it we would have little perspective on the performance of the APR systems built for this challenge. However, we find PER to have particular weaknesses, which we attempt to overcome with the use of FER. FER is similar to PER, but instead of phoneme errors, we compute the number of errors in terms of [distinctive phonological features](https://en.wikipedia.org/wiki/Distinctive_feature). Without worrying too much about the theory behind phonological features, we want to emphasize this intuition: we're looking for speech recognizers that produce transcripts which *sound* closest to the truth.
