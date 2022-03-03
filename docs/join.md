@@ -12,7 +12,7 @@ poster_alt: TODO! A description of the poster image
 The PSST Challenge consists of two tasks:
 
 - In [Task A: Phoneme Recognition](#task-a-phoneme-recognition), we ask participants to phonemically transcribe speech from recordings of people with aphasia
-- In [Task B: Correctness](#task-b-correctness), we ask people to determine whether a a target word is both present and correctly pronounced in the same recordings
+- In [Task B: Correctness](#task-b-correctness), we ask people to determine whether a target word is both present and correctly pronounced in the same recordings
 
 Contestants may focus on either Task A or B, or they may take on the entire challenge. Although Task B is dependent on the output of Task A, you are most welcome to use our [baseline speech recognition model](https://github.com/PSST-Challenge/psstbaseline) for the foundation of your system.
 
