@@ -110,25 +110,19 @@ header #title-box #title-box-sub-title {
     grid-row: sub-title / span 1;
 }
 
-.svg-icon {
-  width: 1rem;
-  height: 1rem;
-  display: inline-block;
-  fill: currentColor;
-  padding: 0.7rem 0.7rem 1em 0;
-  vertical-align: text-bottom;
+nav#sidebar a .svg-icon, nav#sidebar a img {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    fill: currentColor;
+    padding: 0.2em 0.7em 1em 0;
+    vertical-align: text-bottom;
     float: left;
 }
 
-.social-media-list ul {
-    padding: 0;
+.social-links {
+    font-size: 13px;
 }
-.social-media-list li {
-    margin: 0;
-
-}
-
-
 
 nav#sidebar {
     grid-column: content / column-a;

@@ -1,0 +1,39 @@
+<nav id="sidebar">
+  {%- if page.url == "/" -%}
+    <span class="selected">Home</span>
+  {%- else -%}
+    <a href="/">Home</a>
+  {%- endif -%}
+
+  {%- for p in site.pages -%}
+    {%- unless p.disable -%}
+      {%- if p.title and p.url != "/" -%}
+    {{p.disable}}
+          {%- if p.url == page.url -%}
+              <span class="selected">{{p.title}}</span>
+          {%- else -%}
+              <a href="{{p.url | relative_url}}">{{p.title}}</a>
+          {%- endif -%}
+      {%- endif -%}
+    {%- endunless; -%}
+  {%- endfor -%}
+
+  <div class="social-links">
+    {%- assign social = site.social_links -%}
+    <a rel="me" href="https://github.com/PSST-Challenge/psstdata" target="_blank" title="The psstdata package">
+        <svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+        <code>psstdata</code>
+    </a>
+    <a class="twitter-link" rel="me" href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}" target="_blank" title="{{ social.twitter | escape }}">
+        <svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+        @{{social.twitter}}
+    </a>
+    <a href="https://spraakbanken.gu.se/en/rapid-2022" target="_blank">
+        <img src="{{ '/assets/images/affiliates/sbx-logo.svg' | relative_url }}" alt="The S and the T from the Språkbanken Text logo, in sans serif font, with the S in black, and the T in red."/>
+        RaPID-2022
+    </a>
+  </div>
+
+</nav>
+
+

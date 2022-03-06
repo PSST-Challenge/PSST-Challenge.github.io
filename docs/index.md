@@ -5,6 +5,8 @@ layout: page
 
 The PSST Challenge focuses on a technically-challenging and clinically important task&mdash;high-accuracy automatic phoneme recognition of disordered speech, in a diagnostic context&mdash;which has applications  in many different areas relating to speech and language disorders.
 
+Papers must be submitted in <a href="https://www.softconf.com/lrec2022/RaPID-4/" target="_blank">softconf</a> by {{site.submission_deadline}}, formatted according to the <a href="https://lrec2022.lrec-conf.org/en/submission2022/authors-kit/" target="_blank">author's kit</a>. Please refer to <a href="https://spraakbanken.gu.se/en/rapid-2022/submission-details" target="_blank">RaPID submission details</a> for more information.
+
 <div>
 {%- if site.pages -%}
       <nav id="home-nav">

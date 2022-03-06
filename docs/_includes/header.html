@@ -19,32 +19,7 @@
   </div>
 </header>
 
-<nav id="sidebar">
-  {%- if page.url == "/" -%}
-    <span class="selected">Home</span>
-  {%- else -%}
-    <a href="/">Home</a>
-  {%- endif -%}
-
-  {%- for p in site.pages -%}
-    {%- unless p.disable -%}
-      {%- if p.title and p.url != "/" -%}
-    {{p.disable}}
-          {%- if p.url == page.url -%}
-              <span class="selected">{{p.title}}</span>
-          {%- else -%}
-              <a href="{{p.url | relative_url}}">{{p.title}}</a>
-          {%- endif -%}
-      {%- endif -%}
-    {%- endunless; -%}
-  {%- endfor -%}
-
-
-  <div class="social-links">
-    {%- include social.html -%}
-  </div>
-
-</nav>
+{%- include sidebar.html -%}
 
 <script>
     (function (){

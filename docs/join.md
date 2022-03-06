@@ -16,6 +16,8 @@ The PSST Challenge consists of two tasks:
 
 Contestants may focus on either Task A or B, or they may take on the entire challenge. Although Task B is dependent on the output of Task A, you are most welcome to use our [baseline speech recognition model](https://github.com/PSST-Challenge/psstbaseline) for the foundation of your system.
 
+Papers must be submitted in <a href="https://www.softconf.com/lrec2022/RaPID-4/" target="_blank">softconf</a> by {{site.submission_deadline}}, formatted according to the <a href="https://lrec2022.lrec-conf.org/en/submission2022/authors-kit/" target="_blank">author's kit</a>. Please refer to <a href="https://spraakbanken.gu.se/en/rapid-2022/submission-details" target="_blank">RaPID submission details</a> for more information.
+
 ## Challenge Data
 
 ### Access to the data
@@ -103,3 +105,7 @@ Task B will be evaluated in terms of metrics of classification performance. Spec
 ## Tasks A & B: Submission
 
 The file format for results submission for the two tasks is currently being finalized, and will be posted in the second week of March. We will also provide validation scripts that can be used before submitting your results, to ensure their compatibility with our evaluation process.
+
+Papers must be submitted in <a href="https://www.softconf.com/lrec2022/RaPID-4/" target="_blank">softconf</a> by {{site.submission_deadline}}, formatted according to the <a href="https://lrec2022.lrec-conf.org/en/submission2022/authors-kit/" target="_blank">author's kit</a>. Please refer to <a href="https://spraakbanken.gu.se/en/rapid-2022/submission-details" target="_blank">RaPID submission details</a> for more information.
+
+We look forward to seeing your work!
