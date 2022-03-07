@@ -1,15 +1,37 @@
-<meta name="description" content="{{site.description}}" />
-<meta itemprop="name" content="{{page.title}} — {{site.title}}" />
-<meta itemprop="description" content="{{site.description}}" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{page.title}} — {{site.title}}" />
-<meta name="twitter:description" content="{{site.description}}" />
-<!-- <meta name="twitter:site" content="@twitterhandle" /> -->
-<meta name="twitter:image" content="https://psst.study/assets/images/metatags/psst-twitter.jpg" />
-<meta name="og:title" content="{{page.title}} — {{site.title}}" />
-<meta name="og:description" content="{{site.description}}" />
-<meta name="og:image" content="https://psst.study/assets/images/metatags/psst-og.jpg" />
+
 <meta name="og:url" content="https://psst.study" />
 <meta name="og:site_name" content="{{site.title}}" />
 <meta name="og:locale" content="en_US" />
 <meta name="og:type" content="website" />
+
+
+{%- if page.url == "/" -%}
+<meta itemprop="name" content="{{site.title}}" />
+<meta name="og:title" content="{{site.title}}" />
+<meta name="twitter:title" content="{{site.title}}" />
+{%- else -%}
+<meta itemprop="name" content="{{page.title}} — {{site.title}}" />
+<meta name="og:title" content="{{page.title}} — {{site.title}}" />
+<meta name="twitter:title" content="{{page.title}} — {{site.title}}" />
+{%- endif -%}
+
+
+{%- if page.description -%}
+<meta name="description" content="{{page.description}}" />
+<meta itemprop="description" content="{{page.description}}" />
+<meta name="og:description" content="{{page.description}}" />
+<meta name="twitter:description" content="{{page.description}}" />
+{%- else -%}
+<meta name="description" content="{{site.description}}" />
+<meta itemprop="description" content="{{site.description}}" />
+<meta name="og:description" content="{{site.description}}" />
+<meta name="twitter:description" content="{{site.description}}" />
+{%- endif -%}
+
+
+<meta name="og:image" content="https://psst.study/assets/images/metatags/psst-og.jpg" />
+<meta name="twitter:image" content="https://psst.study/assets/images/metatags/psst-twitter.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@{{ site.social_links.twitter }}" />
+
