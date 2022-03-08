@@ -50,23 +50,23 @@ for utterance in data.train[:4]:
     utterance_id = utterance.utterance_id
     transcript = utterance.transcript
     correctness = "Y" if utterance.correctness else "N"
-    filename = utterance.filename
+    filename_absolute = utterance.filename_absolute
 
-    print(f"{utterance_id:26s} {transcript:26s} {correctness:11s} {filename}")
+    print(f"{utterance_id:26s} {transcript:26s} {correctness:11s} {filename_absolute}")
 ```
 
 Which produces:
 
 ```
-# utterance_id             transcript                 correctness  filename
+# utterance_id             transcript                 correctness  filename_absolute
 
-ACWT02a-BNT01-house        HH AW S                    Y            audio/bnt/ACWT02a/ACWT02a-BNT01-house.wav
-ACWT02a-BNT02-comb         K OW M                     Y            audio/bnt/ACWT02a/ACWT02a-BNT02-comb.wav
-ACWT02a-BNT03-toothbrush   T UW TH B R AH SH          Y            audio/bnt/ACWT02a/ACWT02a-BNT03-toothbrush.wav
-ACWT02a-BNT04-octopus      AA S AH P R OW G P UH S    N            audio/bnt/ACWT02a/ACWT02a-BNT04-octopus.wav
+ACWT02a-BNT01-house        HH AW S                    Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT01-house.wav
+ACWT02a-BNT02-comb         K OW M                     Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT02-comb.wav
+ACWT02a-BNT03-toothbrush   T UW TH B R AH SH          Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT03-toothbrush.wav
+ACWT02a-BNT04-octopus      AA S AH P R OW G P UH S    N            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT04-octopus.wav
 ```
 
-These four fields (`utterance_id`, `transcript`, `correctness`, and `filename`) are the pieces you'll need for both challenge tasks. Transcripts are in [ARPAbet](https://en.wikipedia.org/wiki/ARPABET), and can be reliably tokenized using spaces as a separator (`phonemes`&nbsp;`=`&nbsp;`utterance.transcript.split(" ")`). For Task B, we provide an additional resource: [all the pronunciations we consider "correct"](https://github.com/PSST-Challenge/psstdata/blob/main/psstdata/assets/correctness.json) (more on that below). You can learn more about the `psstdata` tool on its [GitHub page](https://github.com/PSST-Challenge/psstdata), where you can also find a copy of the [README](https://github.com/PSST-Challenge/psstdata/blob/main/readme/train/README.md) provided with the data packs.
+These four fields (`utterance_id`, `transcript`, `correctness`, and `filename_absolute`) are the pieces you'll need for both challenge tasks. Transcripts are in [ARPAbet](https://en.wikipedia.org/wiki/ARPABET), and can be reliably tokenized using spaces as a separator (`phonemes`&nbsp;`=`&nbsp;`utterance.transcript.split(" ")`). For Task B, we provide an additional resource: [all the pronunciations we consider "correct"](https://github.com/PSST-Challenge/psstdata/blob/main/psstdata/assets/correctness.json) (more on that below). You can learn more about the `psstdata` tool on its [GitHub page](https://github.com/PSST-Challenge/psstdata), where you can also find a copy of the [README](https://github.com/PSST-Challenge/psstdata/blob/main/readme/train/README.md) provided with the data packs.
 
 
 ### Background on the PSST corpus
