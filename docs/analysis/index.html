@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .align-right {
+            text-align: right;
+        }
+        #app {
+            height: 100%;
+        }
+        #results {
+            display: grid;
+            grid-template-columns: [begin] 3fr [split] 2fr [end];
+            grid-template-rows: [begin] auto [split] 2fr [end];
+            height: 100%;
+            grid-gap: 3em;
+        }
+        #top-pane {
+            grid-column: begin / split;
+            grid-row: begin / split;
+        }
+        #alphabet-picker {
+            float: right;
+        }
+        #item {
+            grid-column: split / end;
+            grid-row: begin / split;
+        }
+        #result-table-wrapper {
+            max-height: 100%;
+            overflow-y: scroll;
+            grid-column: begin / split;
+            grid-row: split / end;
+            padding-right: 1.5em;
+        }
+        table#result-table {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr auto auto auto auto;
+            grid-gap: 0.5em;
+            align-items: center;
+        }
+        table#result-table td.transcript {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        table#result-table thead, table#result-table tbody, table#result-table tr {
+            display: contents;
+        }
+        table#result-table .highlight button {
+            background: #d9d0a5;
+        }
+        td:first-of-type {
+            grid-column-start: 1;
+        }
+        th[colspan="2"] {
+            grid-column: span 2;
+        }
+        table#result-table .header-main {
+            grid-row-start: 2;
+        }
+        table#result-table button {
+            width: 100%;
+            height: 3.4em;
+        }
+
+        #detail {
+            grid-column: split / end;
+            row: split / end;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .transcript-steps {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        .transcript-step {
+            width: 2em;
+            display: inline-block;
+            text-align: center;
+        }
+        .transcript-step .highlight {
+            background: #d9d0a5;
+        }
+
+        .action-eq ul.feature-collection, .action-ins ul.feature-collection, .action-del ul.feature-collection {
+            display: none;
+        }
+
+        table.feature-steps {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 10em;
+            grid-gap: 0.7em;
+            align-items: center;
+            white-space: nowrap;
+        }
+        table.feature-steps thead, table.feature-steps tbody, table.feature-steps tr {
+            display: contents;
+        }
+
+        ul.feature-collection li {
+            list-style: none;
+        }
+
+        .with-brackets {
+            background-image: linear-gradient(#000000, #000000),
+                            linear-gradient(#000000, #000000),
+                            linear-gradient(#000000, #000000),
+                            linear-gradient(#000000, #000000);
+
+            background-repeat: no-repeat;
+            background-size: 0.375em 0.0625em;
+            background-position: top left, top right, bottom left, bottom right;
+
+            border: solid #000000;
+            border-width: 0 0.125em;
+            padding: 1em;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<div id="app">
+    <div id="results">
+        <div id="top-pane">
+            <h1>
+                PSST Error Analysis
+            </h1>
+            <div id="alphabet-picker">
+                <input type="radio" name="alphabet" id="radio-ipa" value="ipa" v-model="alphabet" />
+                <label for="radio-ipa">IPA</label>
+                <input type="radio" name="alphabet" id="radio-arpabet" value="arpabet" v-model="alphabet" />
+                <label for="radio-arpabet">ARPAbet</label>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Overall FER</td>
+                        <td>Overall PER</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{fer(utterances)}}</td>
+                        <td>{{per(utterances)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div id="result-table-wrapper">
+            <table id="result-table">
+                <thead>
+                    <tr class="header-extra">
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th colspan="2" class="header-features" >Features</th>
+                        <th colspan="2" class="header-phonemes" >Phonemes</th>
+                    </tr>
+
+                    <tr class="header-main">
+                        <th>Utterance ID</th>
+                        <th>Actual</th>
+                        <th>Expected</th>
+                        <th>FER</th>
+                        <th>Err/Len</th>
+                        <th>PER</th>
+                        <th>Err/Len</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="[utteranceId, utterance] in utterances" :class="{highlight: utterance == details.utterance}">
+                        <td>
+                            <button @click="setDetails(utteranceId, utterance)">{{utteranceId}}</button>
+                        </td>
+                        <td class="transcript">
+                            {{transcriptExpected(utterance)}}
+                        </td>
+                        <td class="transcript">
+                            {{transcriptActual(utterance)}}
+                        </td>
+                        <td class="align-right">
+                            {{(utterance.features.error_rate * 100).toFixed(1)}}%
+                        </td>
+                        <td class="align-right">
+                            {{ utteranceFeatureCost(utterance) }}
+                        </td>
+                        <td class="align-right">
+                            {{(utterance.phonemes.error_rate * 100).toFixed(1)}}%
+                        </td>
+                        <td class="align-right">
+                            {{ utterancePhonemeCost(utterance) }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="item" v-if="!!details">
+            <h2>{{details.utterance_id}}</h2>
+            <div class="transcript-steps">
+                <div class="transcript-step"
+                     v-for="step, n in details.utterance.features.steps"
+                     :title="stepDetails(step)">
+                    <div :class="{ highlight: detailHoverIndex == n, }">
+                        {{transcriptFormatted([step.expected])}}
+                    </div>
+                    <div :class="{ highlight: detailHoverIndex == n, }">
+                        {{transcriptFormatted([step.actual])}}
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Utterance FER</td>
+                        <td>Utterance PER</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{(100 * details.utterance.features.error_rate).toFixed(1)}}%</td>
+                        <td>{{(100 * details.utterance.phonemes.error_rate).toFixed(1)}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="detail" v-if="!!details">
+            <table class="feature-steps">
+                <thead>
+                    <th>Action</th>
+                    <th>Cost</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Features</th>
+                </thead>
+                <tbody>
+                    <tr v-for="step, n in details.utterance.features.steps"
+                        @mouseover="detailHoverIndex = n"
+                        @mouseleave="detailHoverIndex = null"
+                        :class="['action-' + step.action.toLowerCase()]"
+                    >
+                    <td>{{step.action}}</td>
+                    <td>{{stepFeatureCost(step)}}</td>
+                    <td>
+                        <span v-if="step.expected">
+                            /{{transcriptFormatted([step.expected])}}/
+                        </span>
+                    </td>
+                    <td>
+                        <span v-if="step.actual">
+                            /{{transcriptFormatted([step.actual])}}/
+                        </span>
+                    </td>
+                    <td>
+                        <ul class="feature-collection with-brackets">
+                            <li v-for="value, feature in step.features">
+                                {{formatFeature(feature, value)}},
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                utterances: null,
+                details: null,
+                detailHoverIndex: null,
+                nFeatures: 24,
+                overallFer: null,
+                overallPer: null,
+                alphabet: "arpabet",
+            }
+        },
+        methods: {
+            sum(arr) {
+                return arr.reduce((partialSum, a) => partialSum + a, 0);
+            },
+            errorRate(utterances, selector) {
+                if (!utterances) {
+                    return null;
+                }
+                let totalLength = this.sum(Array.from(utterances.entries()).map(([id, u]) => selector(u).expected_length));
+                let errors = this.sum(Array.from(utterances.entries()).map(([id, u]) => selector(u).distance));
+                return errors / totalLength
+            },
+            fer(utterances) {
+                return `${(100 * this.errorRate(utterances, u => u.features)).toFixed(1)}%`;
+            },
+            per(utterances) {
+                return `${(100 * this.errorRate(utterances, u => u.phonemes)).toFixed(1)}%`;
+            },
+            formatFeature(feature, value) {
+                switch (value) {
+                    case -1:
+                        return `-${feature}`;
+                    case +1:
+                        return `+${feature}`;
+                    case -0.5:
+                        return `-+${feature}`;
+                    case +0.5:
+                        return `+-${feature}`;
+                    default:
+                        return `${value}${feature}`;
+                }
+                if (value < 0) return `-${feature}`;
+                if (value > 0) return `+${feature}`;
+                return `0${feature}`;
+            },
+            stepDetails(step) {
+                if (step.action !== "SUB") {
+                    return "";
+                }
+                let features = Object.keys(step.features)
+                    .map(f => this.formatFeature(f, step.features[f]))
+                    .join(", ");
+                return `/${step.expected}/ → /${step.actual}/ [${features}]`;
+            },
+            updateUtterances(utterances) {
+                let sorted = this.sortUtterances(utterances);
+                this.utterances = sorted;
+                let detail_id = Array.from(sorted.keys())[0];
+                this.setDetails(detail_id, utterances[detail_id]);
+            },
+            setDetails(utteranceId, utterance) {
+                this.details = { utterance_id: utteranceId, utterance: utterance };
+            },
+            sortUtterances(utterances) {
+                return new Map([...Object.entries(utterances)
+                    .map(([id, value]) => [id, value])
+                    .sort((l, r) => r[1].features.error_rate - l[1].features.error_rate)
+                ]);
+            },
+            transcriptFormatted(tokens) {
+                const arpaToIpa = {
+                    "P": "p", "B": "b", "M": "m", "W": "w", "F": "f", "V": "v", "DH": "ð", "TH": "θ", "T": "t",
+                    "D": "d", "S": "s", "Z": "z", "N": "n", "L": "l", "DX": "ɾ", "CH": "t͡ʃ", "JH": "d͡ʒ", "SH": "ʃ",
+                    "ZH": "ʒ", "R": "ɹ", "Y": "j", "K": "k", "G": "ɡ", "NG": "ŋ", "HH": "h", "IY": "i", "UW": "u",
+                    "IH": "ɪ", "UH": "ʊ", "EH": "ɛ", "EY": "e͡ɪ", "AH": "ʌ", "AO": "ɔ", "OY": "ɔ͡ɪ", "OW": "o͡ʊ",
+                    "AE": "æ", "AW": "a͡ʊ", "AY": "a͡ɪ", "AA": "ɑ", "ER": "ɝ"
+                }
+                if (this.alphabet == "ipa") {
+                    return tokens.map(t => arpaToIpa[t]).join("");
+                }
+                else {
+                    return tokens.join(" ");
+                }
+            },
+            costFormatted(cost) {
+                let rounded = Math.round(100 * this.nFeatures * cost, 2) / 100
+                return `${rounded}`
+            },
+            utteranceFeatureCost(utterance) {
+                return `${this.costFormatted(utterance.features.distance)} / ${utterance.features.expected_length * this.nFeatures}`
+            },
+            utterancePhonemeCost(utterance) {
+                return `${utterance.phonemes.distance} / ${utterance.phonemes.expected_length}`
+            },
+            stepFeatureCost(step) {
+                return `${this.costFormatted(step.cost)} / ${this.nFeatures}`
+            },
+            transcriptExpected(utterance) {
+                return this.transcriptFormatted(utterance.features.steps.map(s => s.expected).filter(t => t));
+            },
+            transcriptActual(utterance) {
+                return this.transcriptFormatted(utterance.features.steps.map(s => s.actual).filter(t => t));
+            },
+        },
+        async created () {
+            await fetch("./analysis-valid.json").then(r => r.json()).then(this.updateUtterances);
+        }
+    }).mount('#app')
+</script>
+
+</html>
