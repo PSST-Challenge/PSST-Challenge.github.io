@@ -5,7 +5,15 @@ permalink: /join/
 poster_img: /assets/images/home/icon-submit.svg
 poster_alt: TODO! A description of the poster image
 ---
+
 # Join the challenge!
+{:.no_toc}
+
+#### Table of Contents
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Overview
 
@@ -26,6 +34,7 @@ We've created a unique data set for phonemic ASR—derived from the recordings i
 We have prepared a [set of scripts and utilities](https://github.com/PSST-Challenge/psstdata) for downloading and using the data, once you have received access permissions.
 
 #### Notes on Usage
+{:.no_toc}
 
 All users of this dataset must follow the appropriate AphasiaBank protocols for data management, and is intended for use solely as part of the PSST challenge. It must not be re-distributed, shared, or repurposed without permission.
 
@@ -109,3 +118,15 @@ The file format for results submission for the two tasks is currently being fina
 Papers must be submitted in <a href="https://www.softconf.com/lrec2022/RaPID-4/" target="_blank">softconf</a> by {{site.submission_deadline}}, formatted according to the <a href="https://lrec2022.lrec-conf.org/en/submission2022/authors-kit/" target="_blank">author's kit</a>. Please refer to <a href="https://spraakbanken.gu.se/en/rapid-2022/submission-details" target="_blank">RaPID submission details</a> for more information.
 
 We look forward to seeing your work!
+
+## Frequently Asked Questions
+
+### Q: Will `<sil>` and `<spn>` be included or excluded in the evaluation of phoneme recognition results?
+
+A: All `<sil>` and `<spn>` tokens will be filtered out and excluded prior to the phoneme recognition evaluation process.
+
+### Q: Can additional data be used for training?
+
+A: Yes, additional/external data is allowed in the challenge, **with one caveat**: If you are using AphasiaBank 
+data, you many not use any of the sessions in [this list](/assets/materials/test-sessions.txt), which includes the 
+sessions in the test set. Be sure to include a discussion of any additional data used in your paper’s methods section.
