@@ -47,8 +47,8 @@ Papers should also feature wording in their title indicating that they are part 
 
 - Call for Participation: Feb 22, 2022
 - Training Data Release: Mar 1, 2022
-- Blind Test Set Release: Mar 25, 2022
-- RaPID-2022 Paper Submission Deadline: Apr 2, 2022
+- Blind Test Set Release: Mar 26, 2022
+- RaPID-2022 Paper Submission Deadline: Apr 9, 2022
 - Workshop Date: Jun 25, 2022
 
 ## Contact
