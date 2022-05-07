@@ -5,7 +5,15 @@ permalink: /join/
 poster_img: /assets/images/home/icon-submit.svg
 poster_alt: TODO! A description of the poster image
 ---
+
 # Join the challenge!
+{:.no_toc}
+
+#### Table of Contents
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ## Overview
 
@@ -26,6 +34,7 @@ We've created a unique data set for phonemic ASR—derived from the recordings i
 We have prepared a [set of scripts and utilities](https://github.com/PSST-Challenge/psstdata) for downloading and using the data, once you have received access permissions.
 
 #### Notes on Usage
+{:.no_toc}
 
 All users of this dataset must follow the appropriate AphasiaBank protocols for data management, and is intended for use solely as part of the PSST challenge. It must not be re-distributed, shared, or repurposed without permission.
 
@@ -50,23 +59,23 @@ for utterance in data.train[:4]:
     utterance_id = utterance.utterance_id
     transcript = utterance.transcript
     correctness = "Y" if utterance.correctness else "N"
-    filename = utterance.filename
+    filename_absolute = utterance.filename_absolute
 
-    print(f"{utterance_id:26s} {transcript:26s} {correctness:11s} {filename}")
+    print(f"{utterance_id:26s} {transcript:26s} {correctness:11s} {filename_absolute}")
 ```
 
 Which produces:
 
 ```
-# utterance_id             transcript                 correctness  filename
+# utterance_id             transcript                 correctness  filename_absolute
 
-ACWT02a-BNT01-house        HH AW S                    Y            audio/bnt/ACWT02a/ACWT02a-BNT01-house.wav
-ACWT02a-BNT02-comb         K OW M                     Y            audio/bnt/ACWT02a/ACWT02a-BNT02-comb.wav
-ACWT02a-BNT03-toothbrush   T UW TH B R AH SH          Y            audio/bnt/ACWT02a/ACWT02a-BNT03-toothbrush.wav
-ACWT02a-BNT04-octopus      AA S AH P R OW G P UH S    N            audio/bnt/ACWT02a/ACWT02a-BNT04-octopus.wav
+ACWT02a-BNT01-house        HH AW S                    Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT01-house.wav
+ACWT02a-BNT02-comb         K OW M                     Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT02-comb.wav
+ACWT02a-BNT03-toothbrush   T UW TH B R AH SH          Y            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT03-toothbrush.wav
+ACWT02a-BNT04-octopus      AA S AH P R OW G P UH S    N            /Users/bobby/audio/bnt/ACWT02a/ACWT02a-BNT04-octopus.wav
 ```
 
-These four fields (`utterance_id`, `transcript`, `correctness`, and `filename`) are the pieces you'll need for both challenge tasks. Transcripts are in [ARPAbet](https://en.wikipedia.org/wiki/ARPABET), and can be reliably tokenized using spaces as a separator (`phonemes`&nbsp;`=`&nbsp;`utterance.transcript.split(" ")`). For Task B, we provide an additional resource: [all the pronunciations we consider "correct"](https://github.com/PSST-Challenge/psstdata/blob/main/psstdata/assets/correctness.json) (more on that below). You can learn more about the `psstdata` tool on its [GitHub page](https://github.com/PSST-Challenge/psstdata), where you can also find a copy of the [README](https://github.com/PSST-Challenge/psstdata/blob/main/readme/train/README.md) provided with the data packs.
+These four fields (`utterance_id`, `transcript`, `correctness`, and `filename_absolute`) are the pieces you'll need for both challenge tasks. Transcripts are in [ARPAbet](https://en.wikipedia.org/wiki/ARPABET), and can be reliably tokenized using spaces as a separator (`phonemes`&nbsp;`=`&nbsp;`utterance.transcript.split(" ")`). For Task B, we provide an additional resource: [all the pronunciations we consider "correct"](https://github.com/PSST-Challenge/psstdata/blob/main/psstdata/assets/correctness.json) (more on that below). You can learn more about the `psstdata` tool on its [GitHub page](https://github.com/PSST-Challenge/psstdata), where you can also find a copy of the [README](https://github.com/PSST-Challenge/psstdata/blob/main/readme/train/README.md) provided with the data packs.
 
 
 ### Background on the PSST corpus
@@ -109,3 +118,15 @@ The file format for results submission for the two tasks is currently being fina
 Papers must be submitted in <a href="https://www.softconf.com/lrec2022/RaPID-4/" target="_blank">softconf</a> by {{site.submission_deadline}}, formatted according to the <a href="https://lrec2022.lrec-conf.org/en/submission2022/authors-kit/" target="_blank">author's kit</a>. Please refer to <a href="https://spraakbanken.gu.se/en/rapid-2022/submission-details" target="_blank">RaPID submission details</a> for more information.
 
 We look forward to seeing your work!
+
+## Frequently Asked Questions
+
+### Q: Will `<sil>` and `<spn>` be included or excluded in the evaluation of phoneme recognition results?
+
+A: All `<sil>` and `<spn>` tokens will be filtered out and excluded prior to the phoneme recognition evaluation process.
+
+### Q: Can additional data be used for training?
+
+A: Yes, additional/external data is allowed in the challenge, **with one caveat**: If you are using AphasiaBank 
+data, you many not use any of the sessions in [this list](/assets/materials/test-sessions.txt), which includes the 
+sessions in the test set. Be sure to include a discussion of any additional data used in your paper’s methods section.
