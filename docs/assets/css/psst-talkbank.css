@@ -225,6 +225,10 @@ ol#versions {
     padding: 0;
 }
 
-ol#versions li.version-details {
+li.version-details {
     list-style: none;
+    margin-bottom: 1.5em;
+}
+.version-description {
+    margin-bottom: 1.5em;
 }
