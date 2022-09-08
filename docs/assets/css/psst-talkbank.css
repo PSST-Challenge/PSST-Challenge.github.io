@@ -20,7 +20,6 @@ body {
     width: 100%;
 }
 
-
 header {
     height: 22.5em;
     grid-row: header / end-header;
@@ -107,6 +106,10 @@ header #title-box #title-box-title{
 header #title-box #title-box-sub-title {
     font-size: 2.04em;
     grid-row: sub-title / span 1;
+}
+
+p {
+    line-height: 1.7em;
 }
 
 #content {
