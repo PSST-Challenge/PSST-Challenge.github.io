@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The PSST Challenge - AphasiaBank Data</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=Pontano Sans' rel='stylesheet' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet'  href='https://psst.study/assets/css/psst-talkbank.css' type='text/css' media='all' />
+        <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="The PSST Challenge" />
+    </head>
+    <body>
+    <header>
+      <div id="banner">
+        <div id="logo-box">
+          <a href="/">
+            <img id="logo" src="https://psst.study/assets/images/psst-logo-red.png" alt="The PSST logo. Pale blue circles and lines form what could represent the nodes and edges of a deep neural network. A bold orange pair of hands are cupped in front as though whispering to the viewer. Sans-serif, italic letters 'PSST' are below in bold orange."/>
+          </a>
+        </div>
+        <div id="title-box">
+          <a id="hamburger" href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+          </a>
+
+          <h1>
+            <a href="/" id="title-box-the">The</a>
+            <a href="/" id="title-box-title">PSST Challenge</a>
+            <a href="/" id="title-box-sub-title">Post-Stroke Speech Transcription</a>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <div id="content" class="full-width">
+        <article class="post">
+          <div class="post-content">
+            <h1>AphasiaBank English — Data for the PSST Challenge</h1>
+
+
+              <p>
+                  The PSST: Post-Stroke Speech Transcription shared task was held as part of
+                  <a href="https://spraakbanken.gu.se/en/rapid-2022">RaPID-4</a>, at the
+                  13th Language Resources and Evaluation Conference
+                      (<a href="https://lrec2022.lrec-conf.org/en/">LREC&nbsp;2022</a>) in 
+                      Marseille, France. More background is described at the official 
+              	  <a href="https://psst.study/join/">PSST</a> website.
+              </p>              
+              <h2>The PSST Data</h2>
+				<p>     
+						Conditions for using this dataset are described in the 
+						<a href="https://psst.study/announcement/">call for participation</a>.   
+				</p>
+				<p>
+						Archive files in <code>.tar.gz</code> format.
+						See below for a <a href="#data-contents">description of the contents</a>,
+						as well as a <a href="#versions">version history</a>. 
+				</p>
+				
+
+				<ul>
+					<li><a href="psst-data-2022-03-02_train.tar.gz">Train Data Pack</a> (260MB)</li>
+					<li><a href="psst-data-2022-03-02_valid.tar.gz">Valid Data Pack</a> (29.2MB)</li>
+					<li><a href="psst-data-2022-03-02-full_test.tar.gz">Test Data Pack</a> (47.8MB)</li>
+				</ul>
+				<p>
+				</p>
+				
+				
+              <h2>Additional Resources</h2>
+              
+				<p>
+				  <a rel="me" href="https://github.com/PSST-Challenge/psstdata" target="_blank" title="The psstdata package">
+					<img class="svg-icon" src="https://psst.study/assets/images/various/GitHub-Mark-64px.png"><code>psstdata</code>
+				  </a>:
+				  a set of Python scripts for <strong>automatically downloading and loading</strong> this dataset
+				</p>
+
+				<p>
+				  <a rel="me" href="https://github.com/PSST-Challenge/psstbaseline" target="_blank" title="The psstbaseline package">
+					<img class="svg-icon" src="https://psst.study/assets/images/various/GitHub-Mark-64px.png"><code>psstbaseline</code>
+				  </a>:
+				  the code to download, use, and reproduce <strong>the baseline model from the PSST challenge</strong>
+				</p>
+
+			  
+			  <h2>Publications</h2>
+			  <p>
+				Dimitrios Kokkinakis,
+				Charalambos K. Themistocleous,
+				Kristina Lundholm Fors,
+				Athanasios Tsanas,
+				and Kathleen C. Fraser.
+				2022.
+				<a href="http://www.lrec-conf.org/proceedings/lrec2022/workshops/RaPID4/2022.rapid4-1.0.pdf">
+				<em>Proceedings of the 4th RaPID Workshop: Resources and ProcessIng of linguistic, 
+				para-linguistic and extra-linguistic Data from people with various 
+				forms of cognitive/psychiatric/developmental impairments.</em>
+				</a>
+				European Language Resources Association, Marseille, France.
+			  </p>
+			  <ul style="text-align: center; list-style: none;">
+				  <li style="margin-bottom: 1.5em;">
+					<strong>
+					The Post-Stroke Speech Transcription (PSST) Challenge
+					</strong>
+					<br/>
+					Robert C. Gale, Mikala Fleegle, Gerasimos Fergadiotis, and Steven Bedrick
+					<br/>
+					(pages 41&ndash;55)
+
+				  </li>
+				  <li style="margin-bottom: 1.5em;">
+					<strong>
+					Post-Stroke Speech Transcription Challenge (Task B):<br />
+					Correctness Detection in Anomia Diagnosis with Imperfect Transcripts.
+					</strong>
+					<br />
+					Trang Tran
+					<br/>
+					(pages 56&ndash;61)
+				  </li>
+				  <li style="margin-bottom: 1.5em;">
+					<strong>
+					Speech Data Augmentation for Improving Phoneme Transcriptions of
+					Aphasic Speech using wav2vec 2.0 for the PSST Challenge.
+					</strong>
+					<br />
+					Birger Moël, Jim O’Regan, Shivam Mehta, Ambika Kirkland,
+					Harm Lameris, Joakim Gustafsson, and Jonas Beskow
+					<br/>
+					(pages 62&ndash;70)
+				  </li>
+				  <li style="margin-bottom: 1.5em;">
+					<strong>
+					Data Augmentation for the Post-Stroke Speech Transcription (PSST)
+					Challenge: Sometimes Less is More.
+					</strong>
+					<br />
+					Jiahong Yuan, Xingyu Cai, and Kenneth Church.
+					<br/>
+					(pages 71&ndash;79)
+			  </p>
+			  </ul>
+
+            <h2 id="data-contents">PSST Data Pack Contents</h2>
+            <p>The data packs contain audio files and labels for the <a href="https://psst.study">PSST Challenge</a>. The contents of the data packs are organized as follows:</p>
+            <h3>The <code>./audio</code> directory</h3>
+            <p>The "audio" directory contains sub-directories for the BNT and VNT naming tasks (see task description for more details)</p>
+            <ul>
+            <li>Within each task directory, there is a subdirectory for each session (e.g. "elman11a")</li>
+            <li>Within each session directory, there is a .wav file for each test item (e.g. "elman11a-BNT01-house.wav")</li>
+            <li>The naming scheme is consistent across instances, but not all items are present for all speakers</li>
+            <li>The audio files are mono audio recordings in standard PCM format, at a sampling rate of 16 kHz and a bitrate of 256 kb/s</li>
+            </ul>
+            <h3>The <code>./utterances.tsv</code> file</h3>
+            <p>The labels are in the file "utterances.tsv", which is a UTF-8 encoded, tab-separated file with the following fields:</p>
+            <ul>
+            <li><code>utterance_id</code> is a unique identifier for each production, of the form {session}-{test}{item}-{prompt} (e.g. "ACWT02a-BNT01-house")</li>
+            <li><code>session</code> is the name of the AphasiaBank session from which the production was taken</li>
+            <li><code>test</code> indicates which test each utterance comes from, either <code>BNT</code> (Boston Naming Test) or <code>VNT</code> (Verb Naming Test)</li>
+            <li><code>prompt</code> is an orthographic rendering of the target word</li>
+            <li><code>transcript</code> is the phonemic transcription of the production, in ARPAbet.
+            <ul>
+            <li>Silence is marked using <code>&lt;sil&gt;</code></li>
+            <li>Spoken noise is marked using <code>&lt;spn&gt;</code></li>
+            </ul>
+            </li>
+            <li><code>correctness</code> is marked as <code>TRUE</code> if the production is "correct" according to the clinical scoring rules of the BNT/VNT, <code>FALSE</code> otherwise
+            <ul>
+            <li>For task 2 (correctness), this is the outcome label</li>
+            </ul>
+            </li>
+            <li><code>aq_index</code> is the participant's Aphasia Quotient (AQ).  AQ is the Western Aphasia Battery - Revised Aphasia Quotient (Kertesz, 2007) and it is a standardized total score that reflects overall aphasia severity. Values can fall between between 0.0 and 100.0. A lower number indicates higher severity.</li>
+            <li><code>duration_frames</code> is the number of audio frames in each recording, or the duration in seconds times 16000</li>
+            <li><code>filename</code> contains the relative path within the data pack to the file containing the audio recording for this production</li>
+            </ul>
+            <p>For any questions about the contents of this data pack, please contact Robert Gale (<a href="mailto:galer@ohsu.edu">galer@ohsu.edu</a>) and Steven Bedrick (<a href="mailto:bedricks@ohsu.edu">bedricks@ohsu.edu</a>)</p>
+          </div>
+          
+          <h2>Version History</h2>
+              <ol id="versions">
+                <li class="version-details">
+                    <h3 class="field">Data version 2022-03-02-full (latest)</h3>
+                    <div class="version-description">
+                        <em>The data as was used in during the PSST Challenge, including all test labels.</em>
+                    </div>
+                    <ul>
+                        <li><a href="psst-data-2022-03-02_train.tar.gz">Train Data Pack</a></li>
+                        <li><a href="psst-data-2022-03-02_valid.tar.gz">Valid Data Pack</a></li>
+                        <li><a href="psst-data-2022-03-02-full_test.tar.gz">Test Data Pack</a></li>
+                    </ul>
+                </li>
+
+                <li class="version-details">
+                    <h3 class="field">Older Versions</h3>
+                    <ol id="older-versions">
+                        <li class="version-details">
+                            <h4 class="field">Data version 2022-03-02</h4>
+                            <div class="version-description">
+                                <em>The data as was used in during the PSST Challenge.</em>
+                            </div>
+                            <ul>
+                                <li><a href="psst-data-2022-03-02_train.tar.gz">Train Data Pack</a></li>
+                                <li><a href="psst-data-2022-03-02_valid.tar.gz">Valid Data Pack</a></li>
+                                <li><a href="psst-data-2022-03-02_test.tar.gz">Test Data Pack</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </article>
+
+        </div><footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+
+      <div id="footer-affiliates">
+        <div>
+          <img src="https://psst.study/assets/images/affiliates/nih.svg" alt="Logo for the National Institute of Health (NIH) National Institute on Deafness and Other Communication Disorders. The letters NIH appear on a white arrow-like box which points to the right." />
+        </div>
+        <div>
+          <img src="https://psst.study/assets/images/affiliates/ohsu.svg" alt="Logo for Oregon Health and Science University (OHSU). The letters OHSU appear beneat a curved line, from which curved lines rise in the shape of a flame in yellow, blue, and green." />
+        </div>
+        <div>
+          <img src="https://psst.study/assets/images/affiliates/psu.svg" alt="Logo for Portland State University (PSU). The words 'Portland State' in a large serif font with 'UNIVERISTY' in a sans-serif font below. A green, four-loop, knot-like emblem appears to the left of the text, with the top loop resembling the letter P, the left and right resembling an S, and the bottom resembling a U." />
+        </div>
+      </div>
+
+      <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+          <div class="footer-col">
+          </div>
+        </div>
+
+        <div class="social-links"><ul class="social-media-list"></ul>
+    </div>
+
+      </div>
+
+    </footer>
+</body>
+</html>
+
+
