@@ -6,7 +6,7 @@ permalink: /phonologic/
 
 ## PhonoLogic Viewer: An (Open-Source) ASR Analysis App
 
-FER provides a more nuanced evaluation for ASR systems, but its complexity makes it difficult to interpret. For the PSST Challenge, we wanted a better way to understand FER. We wanted to know which phonological features were involved to get a sense of how each model struggled. For this reason, we created PhonoLogic Viewer, an open-source, interactive tool for phonemic error analysis.
+The feature error rate (FER) metric provides a more nuanced evaluation for ASR systems, but its complexity makes it difficult to interpret. For the PSST Challenge, we wanted a better way to understand FER. We wanted to know which phonological features were involved to get a sense of how each model struggled. For this reason, we created PhonoLogic Viewer, an open-source, interactive tool for phonemic error analysis.
 
 **Step 1 — Get the app.**
 
