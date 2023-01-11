@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Join the Challenge
+title: PhonoLogic Viewer
+disable: true
 permalink: /phonologic/
 ---
 
